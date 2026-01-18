@@ -15,7 +15,7 @@ public class DataContext : DbContext
       string connectionString =
         @"Server=itareapeemers;
         User Id=sa;
-        Password=Jetmaster86@;
+        Password=***; //mdp caché ne pas oublié de le remettre en attendant la bonne sécu
         Database=To_DoDB;
         Trust Server Certificate=True";
 
