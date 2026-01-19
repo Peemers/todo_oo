@@ -31,7 +31,9 @@ public class Tache
     UpdatedAt = DateDeCreation;
   }
 
-  protected Tache() { } // EF Core
+  protected Tache()
+  {
+  } // EF Core
 
   public void ModifierDescription(string nouvelleDescription)
   {
