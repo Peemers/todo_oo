@@ -1,6 +1,6 @@
 ﻿namespace To_Do.Repositories.Interfaces;
 
-internal interface IRepository<T> where T : class
+public interface IRepository<T> where T : class
 {
     Task addAsync(T t);
     Task<IEnumerable<T>> Getall();

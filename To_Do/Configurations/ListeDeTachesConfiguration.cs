@@ -4,17 +4,16 @@ using To_Do.Models;
 
 namespace To_Do.Configurations
 {
-    internal class ListeDeTachesConfiguration : IEntityTypeConfiguration<ListeDeTaches>
+  internal class ListeDeTachesConfiguration : IEntityTypeConfiguration<ListeDeTaches>
+  {
+    public void Configure(EntityTypeBuilder<ListeDeTaches> builder)
     {
-        public void Configure(EntityTypeBuilder<ListeDeTaches> builder)
-        {
-            
-            builder.HasKey(l => l.Id);           
-                     
-            builder.HasMany(l => l.Taches)
-                   .WithOne(t => t.ListeDeTaches)
-                   .HasForeignKey(t => t.ListeDeTachesId)
-                   .OnDelete(DeleteBehavior.Cascade);
-        }
+      builder.HasKey(l => l.Id);
+
+      builder.HasMany(l => l.Taches)
+        .WithOne(t => t.ListeDeTaches)
+        .HasForeignKey(t => t.ListeDeTachesId)
+        .OnDelete(DeleteBehavior.Cascade);
     }
+  }
 }
