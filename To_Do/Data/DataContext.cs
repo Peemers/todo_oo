@@ -27,20 +27,7 @@ public class DataContext : DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-    modelBuilder.Entity<Tache>()
-      .Property(t => t.Titre)
-      .IsRequired();
-
-    modelBuilder.Entity<Tache>()
-      .Property(t => t.Description)
-      .IsRequired(false);
-
-    modelBuilder.Entity<ListeDeTaches>()
-      .HasMany(l => l.Taches)
-      .WithOne(t => t.ListeDeTaches)
-      .HasForeignKey(t => t.ListeDeTachesId)
-      .OnDelete(DeleteBehavior.Cascade);
-
+    modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
     base.OnModelCreating(modelBuilder);
   }
 }
