@@ -7,7 +7,7 @@ public static class TacheMapper
 {
   public static TacheReadAllDto ToReadDto(this Tache t)
   {
-    return new TacheReadAllDto
+    return new TacheReadAllDto()
     {
       Id = t.Id,
       Titre = t.Titre,

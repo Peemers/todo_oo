@@ -19,7 +19,7 @@ internal class TacheRepository : ITacheRepository
     await _context.Taches.AddAsync(t);
   }
 
-  public async Task<IEnumerable<Tache>> GetAll()
+  public async Task<IEnumerable<Tache>> GetAllAsync()
   {
     return await _context.Taches.ToListAsync();
   }
@@ -29,7 +29,7 @@ internal class TacheRepository : ITacheRepository
     return await _context.Taches.FindAsync(id);
   }
 
-  public async Task DeleteAsync(int id)
+  public async Task DeleteAsyncById(int id)
   {
     var tache = await _context.Taches.FindAsync(id);
     if (tache == null)

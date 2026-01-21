@@ -21,7 +21,7 @@ public class TachesController : ControllerBase
   [HttpGet]
   public async Task<ActionResult<IEnumerable<TacheReadAllDto>>> GetAll()
   {
-    var taches = await _tacheRepository.GetAll();
+    var taches = await _tacheRepository.GetAllAsync();
     var result = taches.Select(t => t.ToReadDto());
 
     return Ok(result);
@@ -58,7 +58,7 @@ public class TachesController : ControllerBase
   [HttpDelete("{id}")]
   public async Task<IActionResult> Delete(int id)
   {
-    await _tacheRepository.DeleteAsync(id);
+    await _tacheRepository.DeleteAsyncById(id);
     return NoContent();
   }
 }
