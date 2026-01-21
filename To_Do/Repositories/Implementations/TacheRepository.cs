@@ -7,7 +7,7 @@ namespace To_Do.Repositories.Implementations;
 
 internal class TacheRepository : ITacheRepository
 {
-  protected readonly DataContext _context;
+  private readonly DataContext _context;
 
   public TacheRepository(DataContext context)
   {
