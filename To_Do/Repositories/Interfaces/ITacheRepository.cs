@@ -4,6 +4,6 @@ using To_Do.Enums;
 
 namespace To_Do.Repositories.Interfaces;
 
-internal interface ITacheRepository : IRepository<Tache>
+public interface ITacheRepository : IRepository<Tache>
 {
 }

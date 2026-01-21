@@ -17,7 +17,7 @@ public class Tache
   public int ListeDeTachesId { get; private set; }
   public ListeDeTaches ListeDeTaches { get; private set; } = null!;
 
-  [SetsRequiredMembers]
+  [SetsRequiredMembers] // ici j'explique, fais-moi confiance, ce constructeur remplit tous les required. Merci Claude ^^...
   public Tache(string titre, string description)
   {
     if (string.IsNullOrWhiteSpace(titre))
